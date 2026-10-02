@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFit - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <!-- Minimal Header (Only Centered Logo) -->
+    <header class="login-header">
+        <div class="logo">Smart<span>Fit</span></div>
+    </header>
+
+    <!-- Login Container -->
+    <main class="login-container">
+        <div class="login-card">
+            <a href="index.html" style="position: absolute; top: 15px; right: 20px; text-decoration: none; font-size: 24px; font-weight: bold; color: #333;">&times;</a>
+            <h2>Welcome Back!</h2>
+            <p class="subtitle">Login to continue</p>
+
+            <form>
+                <div class="input-group">
+                    <label for="email">Email or Username</label>
+                    <input type="text" id="email" placeholder="Enter your email or username">
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+
+                <div class="form-actions">
+                    <a href="#" class="forgot-pass">Forgot Password?</a>
+                </div>
+
+               <button type="submit" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 45px; background-color: #1a1a1a; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; border: none; cursor: pointer;">
+    LOGIN
+</button>
+            </form>
+
+            <p style="margin-top: 15px; font-size: 14px; text-align: center;">
+  Don't have an account? <a href="Register.html" style="color: #000; font-weight: bold; text-decoration: underline;">Register</a>
+</p>
+        </div>
+    </main>
+    <script>
+document.querySelector('form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = document.querySelector('#email').value;
+    const password = document.querySelector('#password').value;
+
+    try {
+        const response = await fetch('http://localhost:5000/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('user', JSON.stringify(data.user));
+
+            alert('Login Successful!');
+            window.location.href = 'index.html'; 
+        } else {
+            alert(data.message || 'Invalid Credentials');
+        }
+    } catch (err) {
+        console.error('Error:', err);
+        alert('Server connect nahi ho pa raha hai!');
+    }
+});
+</script>
+
+</body>
+</html>

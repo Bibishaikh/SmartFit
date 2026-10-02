@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFit - Checkout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="user-style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">SmartFit</div>
+        <div class="nav-icons">
+            <i class="fa-solid fa-magnifying-glass" id="search-btn" onclick="toggleSearchBox(event)"></i>
+            <a href="cart.html" style="color: inherit; text-decoration: none;">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count">0</span>
+            </a>
+            <a href="profile.html" style="color: inherit; text-decoration: none;">
+                <i class="fa-regular fa-user"></i>
+            </a>
+        </div>
+    </header>
+
+    <div class="checkout-container">
+        <h2>Checkout</h2>
+        <div class="checkout-grid">
+            <!-- 1. Cart Items Box -->
+<div class="cart-items-box" style="background: #fff; padding: 20px; border-radius: 10px;">
+    <h3>Your Cart Items</h3>
+    <div id="checkout-cart-items"></div>
+</div>
+            <div class="delivery-details">
+                <h3>Delivery Details</h3>
+                <form action="confirmation.html">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your name" required>
+
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="Enter your phone number" required>
+
+                    <label>Address</label>
+                    <input type="text" placeholder="House No., Street, Area" required>
+
+                    <div class="form-row">
+                        <div>
+                            <label>City</label>
+                            <input type="text" placeholder="Select City" required>
+                        </div>
+                        <div>
+                            <label>Pincode</label>
+                            <input type="text" placeholder="Enter Pincode" required>
+                        </div>
+                    </div>
+
+                    <a href="canformation.html" class="btn-primary-full" style="text-align: center; display: block; text-decoration: none; line-height: 45px;">PLACE ORDER</a>
+                </form>
+            </div>
+
+            <div class="order-summary-box">
+                <h3>Order Summary</h3>
+                
+                <!-- Dynamic Items Container -->
+                <div id="checkout-items">
+                    <!-- JavaScript se selected product dynamic load hoga -->
+                </div>
+
+                <div class="summary-item">
+                    <span>Shipping</span>
+                    <span id="checkout-shipping">₹0</span>
+                </div>
+                <hr>
+                <div class="summary-item total">
+                    <span>Total</span>
+                    <span id="checkout-total">₹0</span>
+                </div>
+
+                
+                        <div class="payment-method">
+    <h4>Payment Method</h4>
+    <label class="radio-option">
+        <input type="radio" name="payment" checked>
+        <span>Cash on Delivery (COD)</span>
+    </label>
+    <p class="sub-text">Pay when your order is delivered.</p>
+    
+    <!-- Yeh naya Online Payment option jodein -->
+    <label class="radio-option" style="margin-top: 10px; display: block;">
+        <input type="radio" name="payment">
+        <span>Online Payment (UPI / Credit Card / Debit Card)</span>
+    </label>
+    <p class="sub-text">Pay securely online before delivery.</p>
+</div>
+                    </label>
+                    <p class="sub-text">Pay when your order is delivered.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Script File Link -->
+    <script src="script.js"></script>
+</body>
+</html>

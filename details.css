@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F8F3ED;
+    font-family: 'Poppins', sans-serif;
+    color: #222222;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: #F8F3ED;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #111111;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+nav ul li a.active {
+    font-weight: 600;
+    border-bottom: 2px solid #111111;
+    padding-bottom: 2px;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 16px;
+    color: #1A1A1A;
+    cursor: pointer;
+}
+
+/* Product Section */
+.product-container {
+    display: flex;
+    padding: 30px 80px 60px 80px;
+    gap: 50px;
+}
+
+/* Left Gallery Layout: Thumbnails on left, Main image on right */
+.product-gallery {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    gap: 15px;
+}
+
+/* Thumbnail List (Vertical on left side) */
+.thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.thumb {
+    width: 75px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background-color: #F3ECE2;
+}
+
+.thumb.active, .thumb:hover {
+    border-color: #111111;
+}
+
+/* Main Image Box */
+.main-image {
+    flex: 1;
+    height: 480px;
+    background-color: #F3ECE2;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+/* Right Details */
+.product-details {
+    flex: 1;
+}
+
+.product-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 5px;
+}
+
+.product-category {
+    font-size: 13px;
+    color: #777777;
+    margin-bottom: 18px;
+}
+
+.price-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.current-price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111111;
+}
+
+.original-price {
+    font-size: 16px;
+    text-decoration: line-through;
+    color: #888888;
+}
+
+.discount {
+    font-size: 13px;
+    color: #A35233;
+    font-weight: 600;
+}
+
+/* Sizes */
+.size-section h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.size-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.size-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #D6CBC1;
+    background-color: transparent;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.size-btn.active, .size-btn:hover {
+    background-color: #111111;
+    color: #FFFFFF;
+    border-color: #111111;
+}
+
+.custom-fit-btn {
+    display: inline-block;
+    font-size: 12px;
+    color: #8C6D58;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-cart {
+    flex: 1;
+    padding: 12px;
+    background-color: #111111;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.size-rec-btn, .buy-now-btn {
+    flex: 1;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s;
+     background-color: #111111;
+}
+
+.size-rec-btn {
+    background-color: #F4EFEA;
+    color: #111111;
+    border: 1px solid #D6CBC1;
+}
+
+.size-rec-btn:hover {
+    background-color: #E8E2DA;
+}
+
+.buy-now-btn {
+    background-color: #111111;
+    color: #FFFFFF;
+    border: none;
+}
+
+.buy-now-btn:hover {
+    background-color: #333333;
+}
+
+.btn-wishlist {
+    width: 45px;
+    background-color: #FFFFFF;
+    border: 1px solid #D6CBC1;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.product-info-accordion h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.product-info-accordion p {
+    font-size: 12px;
+    color: #666666;
+    line-height: 1.6;
+}
+/* Product Information Section Styling */
+.product-info-section {
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.product-info-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+/* 2-Column Grid Layout (Nykaa Style) */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 40px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-key {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 2px;
+}
+
+.info-val {
+    font-size: 15px;
+    font-weight: 500;
+    color: #222;
+}
+/* Box layout for Product Information */
+.product-info-box {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 18px;
+    margin-top: 15px;
+}
+
+.product-info-box h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #222;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6px;
+}
+
+/* 2-Column Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    margin-bottom: 15px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-key {
+    font-size: 12px;
+    color: #666;
+}
+
+.info-val {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111;
+}
+
+/* New 'Add to Buy' Button Styling */
+.add-to-buy-btn {
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s ease;
+}
+
+.add-to-buy-btn:hover {
+    background-color: #333333
+};

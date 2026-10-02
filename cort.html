@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFit - Co-ord Sets Collection</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header style="padding: 15px 3%; display: flex; justify-content: space-between; align-items: center; position: relative;">
+        <!-- Logo -->
+        <div class="logo">SmartFit</div>
+
+        <!-- Header Icons Wrapper -->
+        <div class="nav-icons" style="display: flex; gap: 20px; align-items: center; position: relative;">
+            
+            <!-- Search Wrapper -->
+            <div class="search-wrapper" style="position: relative; display: inline-block; z-index: 99999;">
+                <i class="fa-solid fa-magnifying-glass" id="search-btn" onclick="toggleSearchBox(event)" style="cursor: pointer; font-size: 18px; padding: 6px;"></i>
+                <input type="text" id="search-input" placeholder="Search co-ord sets..." style="display: none; position: absolute; right: 0; top: 38px; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; width: 220px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); outline: none; background: #ffffff; z-index: 99999;">
+            </div>
+
+            <!-- Cart Icon with Counter -->
+            <div class="cart-icon-wrapper" style="position: relative; display: inline-block;">
+                <a href="cart.html" id="cart-icon" style="color: inherit; text-decoration: none;">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cart-count" style="position: absolute; top: -8px; right: -10px; background: #e74c3c; color: white; border-radius: 50%; padding: 2px 6px; font-size: 11px; font-weight: bold;">0</span>
+                </a>
+            </div>
+
+            <!-- Profile Icon -->
+            <a href="login.html" style="color: inherit; text-decoration: none;"><i class="fa-regular fa-user"></i></a>
+        </div>
+    </header>
+
+    <!-- Co-ord Sets Collection Section (5 Columns Grid with Full/Long Photos) -->
+    <section class="categories-container" style="padding: 10px 2% 30px; max-width: 1400px; margin: 0 auto;">
+        <h2 class="section-title" style="text-align: center; margin-top: 0; margin-bottom: 20px;">Co-ord Sets Collection</h2>
+        
+        <!-- 5-Column Grid Layout -->
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px;">
+
+            <!-- Item 1 (cortset1) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('cs1', 'Casual Cotton Co-ord Set', 1899, 'cortset1.jpeg')">
+                <img src="cot.jpeg" alt="Casual Cotton Co-ord Set" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Casual Cotton Co-ord Set</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹1,899</p>
+            </div>
+
+            <!-- Item 2 (cortset2) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('cs2', 'Printed Summer Co-ord Set', 2199, 'cortset2.jpeg')">
+                <img src="cortset2.jpeg" alt="Printed Summer Co-ord Set" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Printed Summer Co-ord Set</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,199</p>
+            </div>
+
+            <!-- Item 3 (cortset3) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('cs3', 'Linen Resort Co-ord Set', 2499, 'cortset3.jpeg')">
+                <img src="cortset6.jpeg" alt="Linen Resort Co-ord Set" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Linen Resort Co-ord Set</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,499</p>
+            </div>
+
+            <!-- Item 4 (cortset4) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('cs4', 'Classy Formal Co-ord Set', 2799, 'cortset4.jpeg')">
+                <img src="cortset4.jpeg" alt="Classy Formal Co-ord Set" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Classy Formal Co-ord Set</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,799</p>
+            </div>
+
+            <!-- Item 5 (cortset5) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('cs5', 'Floral Party Wear Co-ord', 2299, 'cortset5.jpeg')">
+                <img src="cortset5.jpeg" alt="Floral Party Wear Co-ord" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Floral Party Wear Co-ord</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,299</p>
+            </div>
+
+            <!-- Item 6 (cortset6) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('cs6', 'Solid Oversized Co-ord Set', 1999, 'cortset6.jpeg')">
+                <img src="cortset6.jpeg" alt="Solid Oversized Co-ord Set" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Solid Oversized Co-ord Set</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹1,999</p>
+            </div>
+
+            <!-- Item 7 (cortset7) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('cs7', 'Designer Printed Co-ord', 2599, 'cortset7.jpeg')">
+                <img src="cortset7.jpeg" alt="Designer Printed Co-ord" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Designer Printed Co-ord</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,599</p>
+            </div>
+
+            <!-- Item 8 (cortset8) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('cs8', 'Satin Finish Evening Co-ord', 2999, 'cortset8.jpeg')">
+                <img src="cortset8.jpeg" alt="Satin Finish Evening Co-ord" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Satin Finish Evening Co-ord</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,999</p>
+            </div>
+
+            <!-- Item 9 (cortset9) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('cs9', 'Knit Wear Casual Co-ord Set', 2099, 'cortset9.jpeg')">
+                <img src="cortset9.jpeg" alt="Knit Wear Casual Co-ord Set" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Knit Wear Casual Co-ord Set</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,099</p>
+            </div>
+
+            <!-- Item 10 (cortset10) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('cs10', 'Minimalist Beach Co-ord Set', 1799, 'cortset10.jpeg')">
+                <img src="cortset10.jpeg" alt="Minimalist Beach Co-ord Set" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Minimalist Beach Co-ord Set</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹1,799</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JavaScript Link -->
+    <script src="script.js"></script>
+
+</body>
+</html>

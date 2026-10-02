@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFit - Ethnic Collection</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+
+    <!-- Header without Navigation Links -->
+    <header style="padding: 15px 3%; display: flex; justify-content: space-between; align-items: center; position: relative;">
+        <!-- Logo -->
+        <div class="logo">SmartFit</div>
+
+        <!-- Header Icons Wrapper -->
+        <div class="nav-icons" style="display: flex; gap: 20px; align-items: center; position: relative;">
+            
+            <!-- Working Search Wrapper -->
+            <div class="search-wrapper" style="position: relative; display: inline-block; z-index: 99999;">
+                <i class="fa-solid fa-magnifying-glass" id="search-btn" onclick="toggleSearchBox(event)" style="cursor: pointer; font-size: 18px; padding: 6px;"></i>
+                <input type="text" id="search-input" placeholder="Search ethnic wear..." style="display: none; position: absolute; right: 0; top: 38px; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; width: 220px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); outline: none; background: #ffffff; z-index: 99999;">
+            </div>
+
+            <!-- Cart Icon with Counter -->
+            <div class="cart-icon-wrapper" style="position: relative; display: inline-block;">
+                <a href="cart.html" id="cart-icon" style="color: inherit; text-decoration: none;">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cart-count" style="position: absolute; top: -8px; right: -10px; background: #e74c3c; color: white; border-radius: 50%; padding: 2px 6px; font-size: 11px; font-weight: bold;">0</span>
+                </a>
+            </div>
+
+            <!-- Profile Icon -->
+            <a href="login.html" style="color: inherit; text-decoration: none;"><i class="fa-regular fa-user"></i></a>
+        </div>
+    </header>
+
+    <!-- Ethnic Wear Collection Section (5 Columns Grid with Full/Long Photos) -->
+    <section class="categories-container" style="padding: 10px 2% 30px; max-width: 1400px; margin: 0 auto;">
+        <h2 class="section-title" style="text-align: center; margin-top: 0; margin-bottom: 20px;">Ethnic Collection</h2>
+        
+        <!-- 5-Column Grid Layout -->
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px;">
+
+            <!-- Item 1 (e1) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('e1', 'Classic Kurta Set', 1999, 'e1.jpeg')">
+                <img src="e1.jpeg" alt="Classic Kurta Set" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Classic Kurta Set</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹1,999</p>
+            </div>
+
+            <!-- Item 2 (e2) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('e2', 'Royal Silk Sherwani', 3499, 'e2.jpeg')">
+                <img src="e2.jpeg" alt="Royal Silk Sherwani" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Royal Silk Sherwani</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹3,499</p>
+            </div>
+
+            <!-- Item 3 (e3) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('e3', 'Embroidered Nehru Jacket', 1799, 'e3.jpeg')">
+                <img src="e3.jpeg" alt="Embroidered Nehru Jacket" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Embroidered Nehru Jacket</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹1,799</p>
+            </div>
+
+            <!-- Item 4 (e4) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('e4', 'Designer Anarkali Suit', 2899, 'e4.jpeg')">
+                <img src="e4.jpeg" alt="Designer Anarkali Suit" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Designer Anarkali Suit</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,899</p>
+            </div>
+
+            <!-- Item 5 (e5) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('e5', 'Traditional Printed Kurta', 1499, 'e5.jpeg')">
+                <img src="e5.jpeg" alt="Traditional Printed Kurta" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Traditional Printed Kurta</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹1,499</p>
+            </div>
+
+            <!-- Item 6 (e6) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('e6', 'Festive Silk Kurta Pajama', 2199, 'e6.jpeg')">
+                <img src="e6.jpeg" alt="Festive Silk Kurta Pajama" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Festive Silk Kurta Pajama</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,199</p>
+            </div>
+
+            <!-- Item 7 (e7) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('e7', 'Floral Ethnic Dress', 2499, 'e7.jpeg')">
+                <img src="e7.jpeg" alt="Floral Ethnic Dress" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Floral Ethnic Dress</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,499</p>
+            </div>
+
+            <!-- Item 8 (e8) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('e8', 'Handcrafted Cotton Kurta', 1299, 'e8.jpeg')">
+                <img src="e8.jpeg" alt="Handcrafted Cotton Kurta" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Handcrafted Cotton Kurta</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹1,299</p>
+            </div>
+
+            <!-- Item 9 (e9) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('e9', 'Designer Indo-Western Set', 3199, 'e9.jpeg')">
+                <img src="e9.jpeg" alt="Designer Indo-Western Set" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Designer Indo-Western Set</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹3,199</p>
+            </div>
+
+            <!-- Item 10 (e10) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('e10', 'Partywear Pathani Suit', 2299, 'e10.jpeg')">
+                <img src="e10.jpeg" alt="Partywear Pathani Suit" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Partywear Pathani Suit</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,299</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JavaScript Link -->
+    <script src="script.js"></script>
+
+</body>
+</html>

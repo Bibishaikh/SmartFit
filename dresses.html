@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFit - Dresses Collection</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header style="padding: 15px 3%; display: flex; justify-content: space-between; align-items: center; position: relative;">
+        <!-- Logo -->
+        <div class="logo">SmartFit</div>
+
+        <!-- Header Icons Wrapper -->
+        <div class="nav-icons" style="display: flex; gap: 20px; align-items: center; position: relative;">
+            
+            <!-- Search Wrapper -->
+            <div class="search-wrapper" style="position: relative; display: inline-block; z-index: 99999;">
+                <i class="fa-solid fa-magnifying-glass" id="search-btn" onclick="toggleSearchBox(event)" style="cursor: pointer; font-size: 18px; padding: 6px;"></i>
+                <input type="text" id="search-input" placeholder="Search dresses..." style="display: none; position: absolute; right: 0; top: 38px; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; width: 220px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); outline: none; background: #ffffff; z-index: 99999;">
+            </div>
+
+            <!-- Cart Icon with Counter -->
+            <div class="cart-icon-wrapper" style="position: relative; display: inline-block;">
+                <a href="cart.html" id="cart-icon" style="color: inherit; text-decoration: none;">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cart-count" style="position: absolute; top: -8px; right: -10px; background: #e74c3c; color: white; border-radius: 50%; padding: 2px 6px; font-size: 11px; font-weight: bold;">0</span>
+                </a>
+            </div>
+
+            <!-- Profile Icon -->
+            <a href="login.html" style="color: inherit; text-decoration: none;"><i class="fa-regular fa-user"></i></a>
+        </div>
+    </header>
+
+    <!-- Dresses Collection Section (5 Columns Grid with Full/Long Photos) -->
+    <section class="categories-container" style="padding: 10px 2% 30px; max-width: 1400px; margin: 0 auto;">
+        <h2 class="section-title" style="text-align: center; margin-top: 0; margin-bottom: 20px;">Dresses Collection</h2>
+        
+        <!-- 5-Column Grid Layout -->
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px;">
+
+            <!-- Item 1 (d1) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('d1', 'Floral Maxi Dress', 2199, 'd1.jpeg')">
+                <img src="d1.jpeg" alt="Floral Maxi Dress" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Floral Maxi Dress</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,199</p>
+            </div>
+
+            <!-- Item 2 (d2) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('d2', 'Elegant Evening Gown', 3499, 'd2.jpeg')">
+                <img src="d2.jpeg" alt="Elegant Evening Gown" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Elegant Evening Gown</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹3,499</p>
+            </div>
+
+            <!-- Item 3 (d3) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('d3', 'Casual Summer Bodycon', 1799, 'd3.jpeg')">
+                <img src="d3.jpeg" alt="Casual Summer Bodycon" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Casual Summer Bodycon</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹1,799</p>
+            </div>
+
+            <!-- Item 4 (d4) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('d4', 'Classic A-Line Midi Dress', 2299, 'd4.jpeg')">
+                <img src="d10.jpeg" alt="Classic A-Line Midi Dress" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Classic A-Line Midi Dress</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,299</p>
+            </div>
+
+            <!-- Item 5 (d5) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('d5', 'Printed Cotton Wrap Dress', 1999, 'd5.jpeg')">
+                <img src="d5.jpeg" alt="Printed Cotton Wrap Dress" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Printed Cotton Wrap Dress</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹1,999</p>
+            </div>
+
+            <!-- Item 6 (d6) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('d6', 'Satin Slip Party Dress', 2599, 'd6.jpeg')">
+                <img src="d6.jpeg" alt="Satin Slip Party Dress" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Satin Slip Party Dress</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,599</p>
+            </div>
+
+            <!-- Item 7 (d7) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('d7', 'Boho Chic Tiered Dress', 2399, 'd7.jpeg')">
+                <img src="d7.jpeg" alt="Boho Chic Tiered Dress" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Boho Chic Tiered Dress</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,399</p>
+            </div>
+
+            <!-- Item 8 (d8) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('d8', 'Off-Shoulder Cocktail Dress', 2899, 'd8.jpeg')">
+                <img src="d8.jpeg" alt="Off-Shoulder Cocktail Dress" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Off-Shoulder Cocktail Dress</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹2,899</p>
+            </div>
+
+            <!-- Item 9 (d9) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('d9', 'Ruffled Beach Sundress', 1699, 'd9.jpeg')">
+                <img src="d9.jpeg" alt="Ruffled Beach Sundress" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Ruffled Beach Sundress</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹1,699</p>
+            </div>
+
+            <!-- Item 10 (d10) -->
+            <div style="background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; cursor: pointer;" 
+                 onclick="viewProductDetails('d10', 'Velvet Winter Party Dress', 3199, 'd10.jpeg')">
+                <img src="d10.jpeg" alt="Velvet Winter Party Dress" style="width: 100%; height: 380px; object-fit: cover; background: #f9f9f9; border-radius: 8px;">
+                <h3 style="font-size: 14px; margin: 10px 0 4px; font-family: 'Poppins', sans-serif; font-weight: 500; color: #333;">Velvet Winter Party Dress</h3>
+                <p style="font-weight: 600; color: #2c3e50; font-size: 13px; margin: 0;">₹3,199</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JavaScript Link -->
+    <script src="script.js"></script>
+
+</body>
+</html>

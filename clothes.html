@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFit - Customize Clothes</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="clothes.css">
+</head>
+<body>
+
+    <div class="customization-card">
+        <h2>Customize Your Outfit</h2>
+        <p class="subtitle">Enter your details to get the perfect fit.</p>
+
+        <form class="custom-form" action="size.html">
+            
+            <!-- Left Column: Measurements -->
+            <div class="form-column" >
+                <h3 class="section-title">Measurements</h3>
+                
+                <div class="input-group">
+                    <label>Chest (inches)</label>
+                    <input type="number" value="38" placeholder="38">
+                </div>
+
+                <div class="input-group">
+                    <label>Waist (inches)</label>
+                    <input type="number" value="32" placeholder="32">
+                </div>
+
+                <div class="input-group">
+                    <label>Hip (inches)</label>
+                    <input type="number" value="40" placeholder="40">
+                </div>
+
+                <div class="input-group">
+                    <label>Shoulder (inches)</label>
+                    <input type="number" value="17" placeholder="17">
+                </div>
+
+                <div class="input-group">
+                    <label>Sleeve Length (inches)</label>
+                    <input type="number" value="24" placeholder="24">
+                </div>
+
+                <div class="input-group">
+                    <label>Height (cm)</label>
+                    <input type="number" value="166" placeholder="166">
+                </div>
+            </div>
+
+            <!-- Right Column: Style Options -->
+            <div class="form-column">
+                
+                <!-- Fabric Dropdown -->
+                <div class="option-group">
+                    <label class="option-label">Fabric</label>
+                    <select class="custom-select">
+                        <option value="cotton">Cotton</option>
+                        <option value="linen">Linen</option>
+                        <option value="silk">Silk</option>
+                    </select>
+                </div>
+
+                <!-- Color Options -->
+                <div class="option-group">
+                    <label class="option-label">Color</label>
+                    <div class="color-options">
+                        <span class="color-box active" style="background-color: #E6D7C3;"></span>
+                        <span class="color-box" style="background-color: #CDB39B;"></span>
+                        <span class="color-box" style="background-color: #C39B8B;"></span>
+                        <span class="color-box" style="background-color: #111111;"></span>
+                        <span class="color-box" style="background-color: #D3BCA6;"></span>
+                    </div>
+                </div>
+
+                <!-- Neck Design -->
+                <div class="option-group">
+                    <label class="option-label">Neck Design</label>
+                    <div class="icon-options">
+                        <button type="button" class="icon-btn active"><i class="fa-solid fa-shirt"></i></button>
+                        <button type="button" class="icon-btn"><i class="fa-solid fa-shirt"></i></button>
+                        <button type="button" class="icon-btn"><i class="fa-solid fa-shirt"></i></button>
+                        <button type="button" class="icon-btn"><i class="fa-solid fa-shirt"></i></button>
+                    </div>
+                </div>
+
+                <!-- Sleeve Style -->
+                <div class="option-group">
+                    <label class="option-label">Sleeve Style</label>
+                    <div class="icon-options">
+                        <button type="button" class="icon-btn"><i class="fa-solid fa-shirt"></i></button>
+                        <button type="button" class="icon-btn"><i class="fa-solid fa-shirt"></i></button>
+                        <button type="button" class="icon-btn"><i class="fa-solid fa-shirt"></i></button>
+                        <button type="button" class="icon-btn"><i class="fa-solid fa-shirt"></i></button>
+                    </div>
+                </div>
+
+                <!-- Quantity -->
+                <div class="option-group">
+                    <label class="option-label">Quantity</label>
+                    <div class="quantity-counter">
+                        <button type="button" class="qty-btn">-</button>
+                        <span class="qty-val">1</span>
+                        <button type="button" class="qty-btn">+</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+
+        <!-- Submit Button -->
+      <a href="size.html" class="submit-btn" style="text-align: center; display: block; text-decoration: none; line-height: 45px;">GET SIZE RECOMMENDATION</a>
+
+
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>

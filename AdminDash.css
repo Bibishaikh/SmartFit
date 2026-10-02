@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F8F5F0;
+    font-family: 'Poppins', sans-serif;
+    color: #222222;
+}
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 200px;
+    background-color: #FFFFFF;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #EBE6DF;
+}
+
+.brand {
+    font-size: 20px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #666666;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.nav-item.active, .nav-item:hover {
+    background-color: #F4EFEA;
+    color: #111111;
+    font-weight: 500;
+}
+
+.logout {
+    border-top: 1px solid #EBE6DF;
+    padding-top: 15px;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Common Card Style */
+.card {
+    background-color: #FFFFFF;
+    border-radius: 14px;
+    padding: 20px 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Section Header & Search */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #FAF7F2;
+    padding: 8px 14px;
+    border-radius: 8px;
+    width: 240px;
+}
+
+.search-bar.small {
+    width: 180px;
+    padding: 6px 10px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 12px;
+    width: 100%;
+}
+
+.search-bar i {
+    color: #999999;
+    font-size: 12px;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.stat-label {
+    font-size: 11px;
+    color: #777777;
+    margin-bottom: 6px;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111111;
+}
+
+/* Overview & Recent Orders */
+.overview-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.orders-overview h4, .recent-orders h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Chart Container Fixes */
+.chart-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 15px;
+    padding-left: 8px;
+}
+
+.y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 115px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #555555;
+    min-width: 20px;
+    text-align: right;
+    padding-right: 4px;
+}
+
+.chart-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.line-chart {
+    width: 100%;
+    height: 115px;
+    overflow: visible;
+}
+
+.x-axis {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    font-weight: 500;
+    color: #555555;
+    margin-top: 8px;
+    padding: 0 4px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view-all {
+    font-size: 11px;
+    color: #777777;
+    text-decoration: none;
+}
+
+.recent-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.recent-list li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #F5F5F5;
+}
+
+/* Tables Styling */
+.table-card {
+    width: 100%;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.table-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: #111111;
+    color: #FFFFFF;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    font-size: 11px;
+    font-weight: 600;
+    color: #777777;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #EBE6DF;
+}
+
+td {
+    font-size: 12px;
+    padding: 12px 0;
+    color: #333333;
+    border-bottom: 1px solid #F7F4F0;
+}
+
+.thumb-img {
+    width: 36px;
+    height: 44px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.action-btns {
+    display: flex;
+    gap: 12px;
+    color: #666666;
+    cursor: pointer;
+}
+
+.action-btns i:hover {
+    color: #111111;
+}
+
+/* Status Badges */
+.badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.badge.confirmed { background-color: #E2F0D9; color: #385D25; }
+.badge.processing { background-color: #FFF2CC; color: #7F6000; }
+.badge.shipped { background-color: #D9E1F2; color: #1F4E78; }
+.sidebar {
+    position: relative;
+    z-index: 999;
+}
+
+/* Links ko clickable aur front par lane ke liye */
+.nav-item {
+    position: relative;
+    z-index: 1000;
+    pointer-events: auto !important;
+    cursor: pointer;
+}
+/* Jab sidebar collapsed class ke sath ho */
+.sidebar.collapsed {
+    width: 70px; /* ya 0 karke hide kar sakti hain */
+}
+.sidebar.collapsed .nav-text {
+    display: none; /* text chhupanay ke liye */
+}

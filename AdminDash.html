@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFit - Admin Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="AdminDash.css">
+</head>
+<body>
+
+    <div class="admin-container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <i class="fa-solid fa-sliders" id="sidebarToggle"></i>
+            </div>
+            <nav class="nav-menu">
+                <a href="#dashboard" class="nav-item active">
+                    <i class="fa-solid fa-square-poll-vertical"></i> <span>Dashboard</span>
+                </a>
+                <a href="#products" class="nav-item">
+                    <i class="fa-solid fa-box-archive"></i> <span>Products</span>
+                </a>
+                <a href="#orders" class="nav-item">
+                    <i class="fa-solid fa-cart-shopping"></i> <span>Orders</span>
+                </a>
+                <a href="#users" class="nav-item">
+                    <i class="fa-regular fa-user"></i> <span>Users</span>
+                </a>
+                <a href="#measurements" class="nav-item">
+                    <i class="fa-solid fa-ruler-combined"></i> <span>Measurements</span>
+                </a>
+            </nav>
+            <div class="logout">
+                <a href="login.html" class="nav-item">
+                    <i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Dashboard</h2>
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search products...">
+                    </div>
+                </div>
+
+                <!-- Stat Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p class="stat-label">Total Orders</p>
+                        <h3 class="stat-value" id="totalOrdersCount">125</h3>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Total Users</p>
+                        <h3 class="stat-value" id="totalUsersCount">86</h3>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Total Products</p>
+                        <h3 class="stat-value" id="totalproductsCount">63</h3>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Total Revenue</p>
+                        <h3 class="stat-value" id="totalRevenueCount">₹1,25,430</h3>
+                    </div>
+                </div>
+
+                <!-- Overview & Recent Orders Grid -->
+                <div class="overview-grid">
+                    
+                    <!-- Orders Overview Chart -->
+                    <div class="card orders-overview">
+                        <h4>Orders Overview</h4>
+                        <div class="chart-container">
+                            <!-- Y-Axis (0, 20, 40, 60) -->
+                            <div class="y-axis">
+                                <span>60</span>
+                                <span>40</span>
+                                <span>20</span>
+                                <span>0</span>
+                            </div>
+                            
+                            <div class="chart-wrapper">
+                                <svg viewBox="0 0 300 120" class="line-chart">
+                                    <!-- Background Grid Lines -->
+                                    <line x1="0" y1="10" x2="300" y2="10" stroke="#E5E5E5" stroke-dasharray="3" />
+                                    <line x1="0" y1="45" x2="300" y2="45" stroke="#E5E5E5" stroke-dasharray="3" />
+                                    <line x1="0" y1="80" x2="300" y2="80" stroke="#E5E5E5" stroke-dasharray="3" />
+                                    
+                                    <!-- Axis Lines -->
+                                    <line x1="0" y1="115" x2="300" y2="115" stroke="#888888" stroke-width="1.5" />
+                                    <line x1="0" y1="0" x2="0" y2="115" stroke="#888888" stroke-width="1.5" />
+                                    
+                                    <!-- Graph Line -->
+                                    <polyline fill="none" stroke="#222222" stroke-width="2" points="10,90 80,75 150,60 220,70 290,30" />
+                                    
+                                    <!-- Graph Points -->
+                                    <circle cx="10" cy="90" r="3" fill="#222222" />
+                                    <circle cx="80" cy="75" r="3" fill="#222222" />
+                                    <circle cx="150" cy="60" r="3" fill="#222222" />
+                                    <circle cx="220" cy="70" r="3" fill="#222222" />
+                                    <circle cx="290" cy="30" r="3" fill="#222222" />
+                                </svg>
+                                
+                                <!-- X-Axis (10, 20, 30, 40, 50) -->
+                                <div class="x-axis">
+                                    <span>10</span>
+                                    <span>20</span>
+                                    <span>30</span>
+                                    <span>40</span>
+                                    <span>50</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Orders -->
+                    <div class="card recent-orders">
+                        <div class="card-header">
+                            <h4>Recent Orders</h4>
+                            <a href="#orders" class="view-all">View All</a>
+                        </div>
+                        <ul class="recent-list">
+                            <li><span>#12567</span><span>25 May</span><strong>₹2,798</strong></li>
+                            <li><span>#12566</span><span>25 May</span><strong>₹1,499</strong></li>
+                            <li><span>#12565</span><span>24 May</span><strong>₹2,199</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Manage Products Section -->
+            <section id="products" class="card table-card">
+                <div class="table-header">
+                    <h3>Products</h3>
+                    <button class="btn-primary">+ Add Product</button>
+                </div>
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-table-body">
+                        
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Manage Users Section -->
+            <section id="users" class="card table-card">
+                <div class="table-header">
+                    <h3>Users</h3>
+                    <div class="search-bar small">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search users...">
+                    </div>
+                </div>
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Joined On</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-table-body">
+                        <!-- Dynamic users yahan JavaScript se aayenge -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Manage Orders Section -->
+            <section id="orders" class="card table-card">
+                <div class="table-header">
+                    <h3>Orders</h3>
+                    <div class="search-bar small">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search orders...">
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#12567</td>
+                            <td>Ayesha Khan</td>
+                            <td>25 May</td>
+                            <td>₹2,798</td>
+                            <td><span class="badge confirmed">Confirmed</span></td>
+                            <td class="action-btns">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                                <i class="fa-regular fa-trash-can"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#12566</td>
+                            <td>Fatima Shaikh</td>
+                            <td>25 May</td>
+                            <td>₹1,499</td>
+                            <td><span class="badge processing">Processing</span></td>
+                            <td class="action-btns">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                                <i class="fa-regular fa-trash-can"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#12565</td>
+                            <td>Zoya Ansari</td>
+                            <td>24 May</td>
+                            <td>₹2,199</td>
+                            <td><span class="badge shipped">Shipped</span></td>
+                            <td class="action-btns">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                                <i class="fa-regular fa-trash-can"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 1. Agar localStorage mein data nahi hai, toh default sample data set karna
+        if (!localStorage.getItem('userOrders')) {
+            localStorage.setItem('userOrders', JSON.stringify([
+                { orderId: '12567', customerName: 'Ayesha Khan', date: '25 May', total: '2,798', status: 'confirmed' },
+                { orderId: '12566', customerName: 'Fatima Shaikh', date: '25 May', total: '1,499', status: 'processing' },
+                { orderId: '12565', customerName: 'Zoya Ansari', date: '24 May', total: '2,199', status: 'shipped' }
+            ]));
+        }
+        if (!localStorage.getItem('users')) {
+            localStorage.setItem('users', JSON.stringify([
+                { name: 'Zinat', email: 'zinat@example.com', phone: '9876543210', joined: '12 Aug 2026' },
+                { name: 'Ayesha Khan', email: 'ayesha@example.com', phone: '9123456789', joined: '10 Aug 2026' },
+                { name: 'Fatima Shaikh', email: 'fatima@example.com', phone: '9988776655', joined: '05 Aug 2026' }
+            ]));
+        }
+        if (!localStorage.getItem('smartFitProducts')) {
+            localStorage.setItem('smartFitProducts', JSON.stringify([
+                { name: 'Cotton Kurta', category: 'Kurta', price: '2500', stock: '10' },
+                { name: 'Linen Shirt', category: 'Shirt', price: '1500', stock: '15' }
+            ]));
+        }
+
+        // 2. Data fetch karna localStorage se
+        const orders = JSON.parse(localStorage.getItem('userOrders')) || [];
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const products = JSON.parse(localStorage.getItem('smartFitProducts')) || [];
+
+        // 3. Stat Cards update karna
+        const ordersEl = document.getElementById('totalOrdersCount');
+        const usersEl = document.getElementById('totalUsersCount');
+        const productsEl = document.getElementById('totalproductsCount');
+        const revenueEl = document.getElementById('totalRevenueCount');
+
+        if (ordersEl) ordersEl.innerText = orders.length;
+        if (usersEl) usersEl.innerText = users.length;
+        if (productsEl) productsEl.innerText = products.length;
+
+        // Total Revenue calculate karna
+        let totalRev = orders.reduce((sum, order) => {
+            let priceNum = Number(String(order.total || order.totalPrice || '0').replace(/[^0-9]/g, '')) || 0;
+            return sum + priceNum;
+        }, 0);
+        if (revenueEl) revenueEl.innerText = '₹' + totalRev.toLocaleString();
+
+        // 4. Users Table ko dynamically fill karna
+        const userTableBody = document.getElementById('user-table-body');
+        if (userTableBody && users.length > 0) {
+            userTableBody.innerHTML = '';
+            users.forEach((user, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${user.name || 'User ' + (index + 1)}</td>
+                    <td>${user.email || 'user@example.com'}</td>
+                    <td>${user.phone || 'N/A'}</td>
+                    <td>${user.joined || '14 Sept 2026'}</td>
+                `;
+                userTableBody.appendChild(row);
+            });
+        }
+
+        // 5. Orders Table ko dynamically fill karna
+        const ordersSection = document.querySelector('#orders table tbody');
+        if (ordersSection && orders.length > 0) {
+            ordersSection.innerHTML = '';
+            orders.forEach(order => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>#${order.orderId || order.id || '12500'}</td>
+                    <td>${order.customerName || 'Customer'}</td>
+                    <td>${order.date || '14 Sept'}</td>
+                    <td>₹${order.total || order.totalPrice || '0'}</td>
+                    <td><span class="badge ${(order.status || 'confirmed').toLowerCase()}">${order.status || 'Confirmed'}</span></td>
+                    <td class="action-btns">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        <i class="fa-regular fa-trash-can"></i>
+                    </td>
+                `;
+                ordersSection.appendChild(row);
+            });
+        }
+    });
+    </script>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>

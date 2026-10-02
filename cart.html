@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFit - Shopping Cart</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+    <div class="cart-card">
+        <!-- Header -->
+        <header>
+           <div class="header-icons">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <div style="position: relative; display: inline-block;">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="cartCount" style="position: absolute; top: -8px; right: -8px; background: red; color: white; font-size: 10px; padding: 2px 5px; border-radius: 50%;">0</span>
+    </div>
+    <i class="fa-regular fa-user"></i>
+</div>
+        </header>
+
+        <!-- Cart Title -->
+        <h2 class="cart-title">Your Cart <span>(2 items)</span></h2>
+
+        <!-- Cart Items List -->
+        <div class="cart-items">
+            
+            <!-- Item 1 -->
+            <div class="cart-item">
+                <div class="item-img">
+                    <img src="cot.jpeg" alt="Cotton Kurta">
+                </div>
+                <div class="item-details">
+                    <h4>Cotton Kurta</h4>
+                    <p class="item-specs">Size: M &nbsp;&nbsp; Color: Green</p>
+                    <p class="item-price">₹1,499</p>
+                </div>
+                <div class="item-actions">
+                    <div class="quantity-counter">
+                        <button class="qty-btn">-</button>
+                        <span class="qty-val">1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                    <button class="delete-btn"><i class="fa-regular fa-trash-can"></i></button>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="cart-item">
+                <div class="item-img">
+                    <img src="kurta3.jpeg" alt="Linen Shirt">
+                </div>
+                <div class="item-details">
+                    <h4>Linen Shirt</h4>
+                    <p class="item-specs">Size: L &nbsp;&nbsp; Color: Beige</p>
+                    <p class="item-price">₹1,299</p>
+                </div>
+                <div class="item-actions">
+                    <div class="quantity-counter">
+                        <button class="qty-btn">-</button>
+                        <span class="qty-val">1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                    <button class="delete-btn"><i class="fa-regular fa-trash-can"></i></button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Total Section -->
+        <div class="cart-footer">
+            <div class="total-row">
+                <span class="total-label">Total</span>
+                <span class="total-price">₹2,798</span>
+            </div>
+            <a href="checkout.html" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 50px; background-color: #1a1a1a; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
+  Check Out
+</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    updateCartBadge();
+});
+
+function updateCartBadge() {
+    // Agar items localStorage ya cart array mein hain toh unki length count hogi
+    // Filhal aapke cart page par 2 static items hain, toh hum 2 ya dynamic length le sakte hain
+    const cartItems = document.querySelectorAll('.cart-item');
+    const count = cartItems.length > 0 ? cartItems.length : 0;
+    
+    const badge = document.getElementById('cartCount');
+    if (badge) {
+        badge.textContent = count;
+    }
+}
+    </script>
+    
+
+<script src="script.js"></script>
+</body>
+</html>
